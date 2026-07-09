@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sống Dai Thành Huyền Thoại - Discord Server</title>
-    <!-- Nhúng Font chữ đậm và dày từ Google Fonts -->
+    <!-- Nhúng Font chữ đậm dày từ Google Fonts -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Montserrat:ital,wght@0,800;0,900;1,400&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
     
     <style>
         /* Toàn bộ cấu trúc nền */
         body {
-            background-color: #2b0202; /* Đỏ rượu đậm sâu làm nền chính */
+            background-color: #2b0202; /* Đỏ rượu đậm sâu */
             background-image: radial-gradient(circle, #4a0404 0%, #1a0101 100%);
             color: #f7e6e6; 
             font-family: 'Montserrat', sans-serif;
@@ -23,21 +23,21 @@
             min-height: 100vh;
         }
 
-        /* Thùng chứa hiệu ứng cánh hoa rơi */
+        /* Thùng chứa hiệu ứng cánh hoa rơi phủ toàn màn hình */
         #rose-petals-container {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Để không bị cản trở việc click nút bấm */
+            pointer-events: none; /* Không cản trở việc click nút bấm */
             z-index: 9999;
         }
 
         .petal {
             position: absolute;
             background-color: #ff3344;
-            border-radius: 150px 10px 150px 10px; /* Tạo hình cánh hoa */
+            border-radius: 150px 10px 150px 10px; /* Tạo hình cánh hoa đào/hoa hồng */
             opacity: 0.7;
             pointer-events: none;
             animation: fall linear infinite;
@@ -54,7 +54,7 @@
 
         /* Khung nội dung chính */
         .container {
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
             padding: 30px 15px;
             display: flex;
@@ -65,8 +65,8 @@
         /* TIÊU ĐỀ CHỮ DÀY VÀ ĐẬM */
         .main-title {
             font-size: 2.2rem;
-            font-weight: 900; /* Độ dày tối đa */
-            text-transform: lowercase; /* Chữ thường giống ảnh phác thảo */
+            font-weight: 900; 
+            text-transform: lowercase; /* Chữ thường theo ảnh phác thảo */
             color: #ff4d6d;
             text-align: center;
             margin-bottom: 25px;
@@ -74,7 +74,7 @@
             text-shadow: 0 4px 10px rgba(0,0,0,0.7);
         }
 
-        /* Khung Banner */
+        /* Khung Banner 1 */
         .banner-box {
             width: 100%;
             max-height: 350px;
@@ -94,7 +94,7 @@
         /* KHUNG 1: ABOUT US */
         .about-box {
             width: 100%;
-            background-color: rgba(92, 6, 6, 0.45); /* Đỏ đậm mờ hòa quyện với nền */
+            background-color: rgba(92, 6, 6, 0.45); /* Đỏ rượu mờ tương thích nền */
             border: 1px solid rgba(255, 77, 109, 0.2);
             border-radius: 16px;
             padding: 25px;
@@ -126,16 +126,16 @@
             margin: 12px 0;
         }
 
-        /* KHU VỰC GAME (HÀNG 2 CỘT GIỐNG ẢNH MẪU) */
+        /* KHU VỰC GAME (HÀNG 2 CỘT) */
         .game-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
             width: 100%;
-            margin-bottom: 35px;
+            margin-bottom: 45px;
         }
 
-        /* Cột Trái: Ảnh con mèo */
+        /* Cột Trái: Khung ảnh 2 của bạn */
         .game-img-box {
             width: 100%;
             aspect-ratio: 1 / 1;
@@ -150,7 +150,7 @@
             object-fit: cover;
         }
 
-        /* Cột Phải: Khung "game" */
+        /* Cột Phải: Khung chữ "game" */
         .game-info-box {
             background-color: rgba(92, 6, 6, 0.45);
             border: 1px solid rgba(255, 77, 109, 0.2);
@@ -159,6 +159,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
 
@@ -167,52 +168,87 @@
             font-weight: 800;
             color: #ffffff;
             text-transform: lowercase;
-            margin-bottom: 10px;
+            margin: 0;
         }
 
-        /* KHU VỰC HÀNG NGANG (SERVER CÓ GÌ VUI?) */
+        /* KHU VỰC 4 KHUNG (SERVER CÓ GÌ VUI?) */
         .fun-section {
             width: 100%;
             text-align: center;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
         }
 
         .fun-title {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 800;
             color: #ffb3b3;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             text-transform: lowercase;
         }
 
+        /* Chia bố cục dạng lưới đứng dọc trên điện thoại và 2x2 hoặc 4 cột tùy độ rộng */
         .fun-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+            grid-template-columns: 1fr; /* Mặc định xếp dọc */
+            gap: 20px;
             width: 100%;
+        }
+
+        /* Khi màn hình lớn hơn một chút sẽ tự động chia 2 hàng x 2 cột cho thoáng */
+        @media(min-width: 480px) {
+            .fun-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         .fun-card {
             background-color: rgba(92, 6, 6, 0.45);
-            border: 1px solid rgba(255, 77, 109, 0.15);
-            aspect-ratio: 1 / 1;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 77, 109, 0.2);
+            border-radius: 16px;
+            padding: 20px 15px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Định dạng text nghệ thuật trong 4 ô */
+        .card-head {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 2px;
+        }
+
+        .card-heart {
+            color: #ff4d6d;
+            text-align: center;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .card-body-text {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #f5d1d1;
+            white-space: pre-line; /* Giữ nguyên ký tự xuống dòng xuống hàng */
+            font-weight: 400;
         }
 
         /* NÚT JOIN TRÒN TO DƯỚI CÙNG */
         .join-btn {
             display: inline-block;
-            background-color: #ff1a40; /* Nút đỏ tươi bắt mắt tương phản đẹp với nền rượu */
+            background-color: #ff1a40; /* Đỏ tươi nổi bật làm điểm nhấn tương phản */
             color: white;
             font-size: 1.5rem;
             font-weight: 800;
             text-decoration: none;
             text-transform: lowercase;
-            padding: 12px 60px;
+            padding: 12px 70px;
             border-radius: 40px;
             box-shadow: 0 6px 20px rgba(255, 26, 64, 0.4);
             transition: all 0.3s ease;
+            margin-top: 10px;
         }
 
         .join-btn:hover {
@@ -224,7 +260,7 @@
 </head>
 <body>
 
-    <!-- Container cho hiệu ứng hoa rơi -->
+    <!-- Khung chứa hiệu ứng hoa rơi -->
     <div id="rose-petals-container"></div>
 
     <div class="container">
@@ -232,9 +268,9 @@
         <!-- TIÊU ĐỀ CHỮ ĐẬM DÀY -->
         <div class="main-title">sống dai thành huyền thoại</div>
 
-        <!-- BANNER -->
+        <!-- BANNER 1 -->
         <div class="banner-box">
-            <img src="https://discordapp.com&" alt="Banner">
+            <img src="https://cdn.discordapp.com/attachments/1489965508735406141/1524780234493268038/file_000000009fbc71f88bf296828fada81f.png?ex=6a50fdc0&is=6a4fac40&hm=baa648901f0b8cd7adb8e66fc53e3c6e74ec68567b661d824090981a0bcd9a3c&" alt="Banner">
         </div>
         
         <!-- KHUNG 1: ABOUT US -->
@@ -246,31 +282,67 @@
             </div>
         </div>
 
-        <!-- KHU VỰC GAME (HÀNG 2 Ô) -->
+        <!-- KHU VỰC GAME (HÀNG 2 CỘT CÓ ẢNH CHÚ MÈO MỚI) -->
         <div class="game-grid">
             <div class="game-img-box">
-                <!-- Link ảnh chú mèo uống Coca giống thiết kế của bạn -->
-                <img src="https://unsplash.com" alt="Cat gaming">
+                <img src="https://cdn.discordapp.com/attachments/1489965508735406141/1524793895404441743/8292d7783cec70bd9e0671f9230eb1c0.jpg?ex=6a510a79&is=6a4fb8f9&hm=38b2d2d10b50db3f87c9e3d32c5b2925ce89bc48214122e88a60c0f2a67ce1be&" alt="Game Illustration">
             </div>
             <div class="game-info-box">
                 <div class="game-title">game</div>
-                <!-- Bạn có thể chèn thêm nội dung về khu vực game tại đây nếu muốn -->
             </div>
         </div>
 
-        <!-- KHU VỰC SERVER CÓ GÌ VUI? -->
+        <!-- KHU VỰC 4 KHUNG: SERVER CÓ GÌ VUI? -->
         <div class="fun-section">
             <div class="fun-title">server có gì vui?</div>
             <div class="fun-grid">
-                <div class="fun-card"></div>
-                <div class="fun-card"></div>
-                <div class="fun-card"></div>
-                <div class="fun-card"></div>
+                
+                <!-- Ô 01 -->
+                <div class="fun-card">
+                    <div class="card-head">𝟶𝟷 . Hệ thống cày level</div>
+                    <div class="card-heart">♡⸝⸝</div>
+                    <div class="card-body-text">⤷ Chat và treo room . .
+⤷ Nhận các role thú vị . .</div>
+                </div>
+
+                <!-- Ô 02 -->
+                <div class="fun-card">
+                    <div class="card-head">𝟶𝟸 . Các mini-games độc đáo</div>
+                    <div class="card-heart">♡⸝⸝</div>
+                    <div class="card-body-text">⤷ Owo ﹕ săn thú
+⤷ Mudae ﹕ gacha waifu . .
+⤷ Neko ﹕ nối từ - cờ bạc
+⤷ Poketwo ﹕ bắt pokemon .</div>
+                </div>
+
+                <!-- Ô 03 -->
+                <div class="fun-card">
+                    <div class="card-head">𝟶𝟛 . Quán NET thâu đêm</div>
+                    <div class="card-heart">♡⸝⸝</div>
+                    <div class="card-body-text">⤷ Free fire
+⤷ Minecraft . . ୭ ˚. ᵎᵎ
+⤷ Roblox
+⤷ PUBG ⸝⸝⸝ . .
+⤷ Liên Quân
+⤷ LOL
+⤷ Valorant ˖᯽ ݁˖
+⤷ Steam games</div>
+                </div>
+
+                <!-- Ô 04 -->
+                <div class="fun-card">
+                    <div class="card-head">𝟶𝟦 . Check-mic</div>
+                    <div class="card-heart">♡⸝⸝</div>
+                    <div class="card-body-text">𓂃 . 𝘳𝘦𝘸𝘢𝘳𝘥𝘴 . role riêng biệt 🍒 𓂃 𓈒𓏸
+╭ Authentic Girl Ი𐑼⋆ ﹕ con gái
+╰ Celestial boy ᥫ᭡. ﹕ con trai</div>
+                </div>
+
             </div>
         </div>
 
-        <!-- NÚT BẤM JOIN -->
-        <a href="LINK_MOI_DISCORD_CUA_BAN" target="_blank" class="join-btn">join</a>
+        <!-- NÚT BẤM JOIN DẪN THẲNG ĐẾN SERVER DISCORD CỦA BẠN -->
+        <a href="https://discord.gg/vwRahKpZF" target="_blank" class="join-btn">join</a>
 
     </div>
 
@@ -278,22 +350,46 @@
     <script>
         function createPetals() {
             const container = document.getElementById('rose-petals-container');
-            const petalCount = 25; // Số lượng cánh hoa xuất hiện trên màn hình
+            const petalCount = 30; // Số lượng cánh hoa trên màn hình cùng một lúc
 
             for (let i = 0; i < petalCount; i++) {
                 const petal = document.createElement('div');
                 petal.classList.add('petal');
                 
-                // Thuộc tính ngẫu nhiên cho từng cánh hoa
-                const sizeWidth = Math.random() * 12 + 6; // Kích thước ngẫu nhiên
+                // Thiết lập kích thước ngẫu nhiên tự nhiên
+                const sizeWidth = Math.random() * 12 + 6; 
                 const sizeHeight = sizeWidth * 1.3;
                 petal.style.width = `${sizeWidth}px`;
                 petal.style.height = `${sizeHeight}px`;
                 
-                petal.style.left = `${Math.random() * 100}vw`; // Vị trí ngang ngẫu nhiên
-                petal.style.top = `${Math.random() * -20}px`; // Bắt đầu rơi từ mép trên ngoài màn hình
+                // Vị trí ngang xuất phát ngẫu nhiên từ trái qua phải màn hình
+                petal.style.left = `${Math.random() * 100}vw`; 
+                petal.style.top = `${Math.random() * -20}px`; // Rơi từ trên đỉnh ngoài màn hình xuống
                 
-                const duration = Math.random() * 5 + 5; // Tốc độ rơi ngẫu nhiên (5s - 10s)
+                // Thiết lập thời gian rơi ngẫu nhiên (từ 5 giây đến 10 giây) để tạo độ so le
+                const duration = Math.random() * 5 + 5; 
                 petal.style.animationDuration = `${duration}s`;
                 
-                const delay = Math.random() * 5; // Độ trễ xuất hiện ngẫu nhiên
+                // Độ trễ xuất hiện ngẫu nhiên giúp các cánh hoa không rơi cùng một lúc
+                const delay = Math.random() * 6; 
+                petal.style.animationDelay = `${delay}s`;
+
+                // Phối màu đỏ và hồng ngẫu nhiên tăng tính chân thật
+                const colors = ['#ff4d6d', '#ff758f', '#c9184a', '#a4133c', '#ff1a40'];
+                petal.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+                container.appendChild(petal);
+
+                // Lắng nghe sự kiện vòng lặp để tiếp tục hồi sinh cánh hoa khi rơi hết màn hình
+                petal.addEventListener('animationend', () => {
+                    petal.style.left = `${Math.random() * 100}vw`;
+                    petal.style.animationDuration = `${Math.random() * 5 + 5}s`;
+                });
+            }
+        }
+        // Gọi kích hoạt tạo hoa ngay khi website tải xong cấu trúc dữ liệu
+        window.addEventListener('DOMContentLoaded', createPetals);
+    </script>
+
+</body>
+</html>
