@@ -4,133 +4,296 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sống Dai Thành Huyền Thoại - Discord Server</title>
+    <!-- Nhúng Font chữ đậm và dày từ Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:ital,wght@0,800;0,900;1,400&display=swap" rel="stylesheet">
+    
     <style>
-        /* Thiết lập nền màu đỏ rượu chủ đạo */
+        /* Toàn bộ cấu trúc nền */
         body {
-            background-color: #4a0404; /* Màu đỏ rượu (Burgundy) sang trọng */
-            color: #f5e6e6; /* Màu chữ trắng hồng nhạt hài hòa với nền */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #2b0202; /* Đỏ rượu đậm sâu làm nền chính */
+            background-image: radial-gradient(circle, #4a0404 0%, #1a0101 100%);
+            color: #f7e6e6; 
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
         }
 
-        /* Khung chứa nội dung chính */
-        .main-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* Tiêu đề chính đặt trên cùng và căn giữa */
-        h1 {
-            color: #ffb3b3; /* Màu hồng nhạt nổi bật trên nền đỏ rượu */
-            font-size: 2.8rem;
-            text-align: center;
-            margin-top: 10px;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Tạo đổ bóng cho chữ */
-        }
-
-        /* Khung chứa Banner tự design nằm bên dưới tiêu đề */
-        .banner-container {
+        /* Thùng chứa hiệu ứng cánh hoa rơi */
+        #rose-petals-container {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-height: 500px; /* Tăng chiều cao tối đa phù hợp với ảnh của bạn */
-            overflow: hidden;
-            border-radius: 12px; /* Bo góc ảnh cho đẹp mắt */
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6); /* Đổ bóng cho khung ảnh */
-            margin-bottom: 40px;
-            background-color: #2a0202;
+            height: 100%;
+            pointer-events: none; /* Để không bị cản trở việc click nút bấm */
+            z-index: 9999;
         }
 
-        .banner-container img {
+        .petal {
+            position: absolute;
+            background-color: #ff3344;
+            border-radius: 150px 10px 150px 10px; /* Tạo hình cánh hoa */
+            opacity: 0.7;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-20px) rotate(0deg);
+            }
+            100% {
+                transform: translateY(105vh) rotate(360deg);
+            }
+        }
+
+        /* Khung nội dung chính */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* TIÊU ĐỀ CHỮ DÀY VÀ ĐẬM */
+        .main-title {
+            font-size: 2.2rem;
+            font-weight: 900; /* Độ dày tối đa */
+            text-transform: lowercase; /* Chữ thường giống ảnh phác thảo */
+            color: #ff4d6d;
+            text-align: center;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.7);
+        }
+
+        /* Khung Banner */
+        .banner-box {
+            width: 100%;
+            max-height: 350px;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            margin-bottom: 30px;
+        }
+
+        .banner-box img {
             width: 100%;
             height: auto;
             display: block;
             object-fit: cover;
         }
 
-        /* Cấu trúc các ô nội dung bên dưới */
-        .section {
-            background-color: #5c0606; /* Khung nền đỏ sáng hơn một chút để nổi bật */
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 30px;
-            border: 1px solid #780a0a;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        /* KHUNG 1: ABOUT US */
+        .about-box {
+            width: 100%;
+            background-color: rgba(92, 6, 6, 0.45); /* Đỏ đậm mờ hòa quyện với nền */
+            border: 1px solid rgba(255, 77, 109, 0.2);
+            border-radius: 16px;
+            padding: 25px;
+            box-sizing: border-box;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.2), 0 8px 20px rgba(0,0,0,0.4);
+            margin-bottom: 35px;
+            text-align: center;
         }
 
-        /* Tiêu đề About us căn giữa */
-        .about-head {
-            text-align: center;
+        .about-title {
+            font-size: 1.8rem;
+            font-weight: 800;
             color: #ffffff;
-            margin-top: 0;
-            font-size: 2rem;
-            border-bottom: 2px solid #ffb3b3;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            text-transform: lowercase;
         }
 
-        /* Định dạng đoạn văn văn bản */
-        .about-body {
-            font-size: 1.2rem;
-            text-align: justify; /* Căn đều hai bên cho chuyên nghiệp */
-            text-indent: 20px; /* Thụt lề đầu dòng */
+        .about-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-style: italic; /* Chữ nghiêng theo yêu cầu */
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #fce4e4;
+            text-align: left;
         }
 
-        /* Nút bấm Tham gia Server */
-        .btn-container {
+        .about-text p {
+            margin: 12px 0;
+        }
+
+        /* KHU VỰC GAME (HÀNG 2 CỘT GIỐNG ẢNH MẪU) */
+        .game-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+            margin-bottom: 35px;
+        }
+
+        /* Cột Trái: Ảnh con mèo */
+        .game-img-box {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+
+        .game-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Cột Phải: Khung "game" */
+        .game-info-box {
+            background-color: rgba(92, 6, 6, 0.45);
+            border: 1px solid rgba(255, 77, 109, 0.2);
+            border-radius: 24px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .game-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-transform: lowercase;
+            margin-bottom: 10px;
+        }
+
+        /* KHU VỰC HÀNG NGANG (SERVER CÓ GÌ VUI?) */
+        .fun-section {
+            width: 100%;
             text-align: center;
-            margin-top: 20px;
+            margin-bottom: 35px;
         }
 
+        .fun-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #ffb3b3;
+            margin-bottom: 15px;
+            text-transform: lowercase;
+        }
+
+        .fun-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            width: 100%;
+        }
+
+        .fun-card {
+            background-color: rgba(92, 6, 6, 0.45);
+            border: 1px solid rgba(255, 77, 109, 0.15);
+            aspect-ratio: 1 / 1;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        /* NÚT JOIN TRÒN TO DƯỚI CÙNG */
         .join-btn {
             display: inline-block;
-            background-color: #248046; /* Giữ màu xanh lá đặc trưng Discord để người dùng dễ nhận biết */
+            background-color: #ff1a40; /* Nút đỏ tươi bắt mắt tương phản đẹp với nền rượu */
             color: white;
+            font-size: 1.5rem;
+            font-weight: 800;
             text-decoration: none;
-            padding: 15px 40px;
-            font-weight: bold;
-            border-radius: 30px; /* Bo tròn nút bấm */
-            font-size: 1.2rem;
+            text-transform: lowercase;
+            padding: 12px 60px;
+            border-radius: 40px;
+            box-shadow: 0 6px 20px rgba(255, 26, 64, 0.4);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(36, 128, 70, 0.4);
         }
 
         .join-btn:hover {
-            background-color: #1a6535;
-            transform: translateY(-3px); /* Hiệu ứng nổi lên khi di chuột */
-            box-shadow: 0 6px 20px rgba(36, 128, 70, 0.6);
+            background-color: #ff4d6d;
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 26, 64, 0.6);
         }
     </style>
 </head>
 <body>
 
-    <div class="main-content">
-        
-        <!-- PHẦN 1: TIÊU ĐỀ ĐỔI TÊN VÀ CĂN GIỮA -->
-        <h1>SỐNG DAI THÀNH HUYỀN THOẠI</h1>
+    <!-- Container cho hiệu ứng hoa rơi -->
+    <div id="rose-petals-container"></div>
 
-        <!-- PHẦN 2: BANNER NẰM PHÍA DƯỚI TIÊU ĐỀ -->
-        <div class="banner-container">
-            <img src="https://cdn.discordapp.com/attachments/1489965508735406141/1524780234493268038/file_000000009fbc71f88bf296828fada81f.png?ex=6a50fdc0&is=6a4fac40&hm=baa648901f0b8cd7adb8e66fc53e3c6e74ec68567b661d824090981a0bcd9a3c&" alt="Sống Dai Thành Huyền Thoại Banner">
+    <div class="container">
+        
+        <!-- TIÊU ĐỀ CHỮ ĐẬM DÀY -->
+        <div class="main-title">sống dai thành huyền thoại</div>
+
+        <!-- BANNER -->
+        <div class="banner-box">
+            <img src="https://discordapp.com&" alt="Banner">
         </div>
         
-        <!-- PHẦN 3: NỘI DUNG GIỚI THIỆU ABOUT US -->
-        <div class="section">
-            <div class="about-head">About us</div>
-            <div class="about-body">
-                Đây là một cộng đồng được tạo ra với mong muốn mang đến một không gian vui vẻ, thân thiện và thoải mái, nơi mọi người có thể trò chuyện, chơi game, kết bạn và cùng nhau tạo nên những kỷ niệm đáng nhớ. Dù bạn là người hướng nội hay hướng ngoại, bạn đều luôn được chào đón.
+        <!-- KHUNG 1: ABOUT US -->
+        <div class="about-box">
+            <div class="about-title">about us</div>
+            <div class="about-text">
+                <p>✧ Đây là một cộng đồng được tạo ra với mong muốn mang đến một không gian vui vẻ, thân thiện và thoải mái, nơi mọi người có thể trò chuyện, chơi game, kết bạn và cùng nhau tạo nên những kỷ niệm đáng nhớ.</p>
+                <p>✧ Dù bạn là người hướng nội hay hướng ngoại, bạn đều luôn được chào đón.</p>
             </div>
         </div>
 
-        <!-- NÚT BẤM THAM GIA DISCORD -->
-        <div class="btn-container">
-            <!-- Bạn hãy nhớ thay chữ LINK_MOI_DISCORD_CỦA_BẠN ở dưới bằng link thật nhé -->
-            <a href="LINK_MOI_DISCORD_CUA_BAN" target="_blank" class="join-btn">THAM GIA SERVER NGAY</a>
+        <!-- KHU VỰC GAME (HÀNG 2 Ô) -->
+        <div class="game-grid">
+            <div class="game-img-box">
+                <!-- Link ảnh chú mèo uống Coca giống thiết kế của bạn -->
+                <img src="https://unsplash.com" alt="Cat gaming">
+            </div>
+            <div class="game-info-box">
+                <div class="game-title">game</div>
+                <!-- Bạn có thể chèn thêm nội dung về khu vực game tại đây nếu muốn -->
+            </div>
         </div>
+
+        <!-- KHU VỰC SERVER CÓ GÌ VUI? -->
+        <div class="fun-section">
+            <div class="fun-title">server có gì vui?</div>
+            <div class="fun-grid">
+                <div class="fun-card"></div>
+                <div class="fun-card"></div>
+                <div class="fun-card"></div>
+                <div class="fun-card"></div>
+            </div>
+        </div>
+
+        <!-- NÚT BẤM JOIN -->
+        <a href="LINK_MOI_DISCORD_CUA_BAN" target="_blank" class="join-btn">join</a>
 
     </div>
 
-</body>
-</html>
+    <!-- SCRIPT TẠO CÁNH HOA HỒNG BAY NGẪU NHIÊN -->
+    <script>
+        function createPetals() {
+            const container = document.getElementById('rose-petals-container');
+            const petalCount = 25; // Số lượng cánh hoa xuất hiện trên màn hình
+
+            for (let i = 0; i < petalCount; i++) {
+                const petal = document.createElement('div');
+                petal.classList.add('petal');
+                
+                // Thuộc tính ngẫu nhiên cho từng cánh hoa
+                const sizeWidth = Math.random() * 12 + 6; // Kích thước ngẫu nhiên
+                const sizeHeight = sizeWidth * 1.3;
+                petal.style.width = `${sizeWidth}px`;
+                petal.style.height = `${sizeHeight}px`;
+                
+                petal.style.left = `${Math.random() * 100}vw`; // Vị trí ngang ngẫu nhiên
+                petal.style.top = `${Math.random() * -20}px`; // Bắt đầu rơi từ mép trên ngoài màn hình
+                
+                const duration = Math.random() * 5 + 5; // Tốc độ rơi ngẫu nhiên (5s - 10s)
+                petal.style.animationDuration = `${duration}s`;
+                
+                const delay = Math.random() * 5; // Độ trễ xuất hiện ngẫu nhiên
