@@ -136,72 +136,24 @@
             margin: 14px 0;
         }
 
-        /* KHU VỰC GAME (HÀNG 2 CỘT) */
-        .game-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            width: 100%;
-            margin-bottom: 45px;
-        }
-
-        /* Cột Trái: Ảnh động vật/Mèo ngầu bọc cống */
-        .game-img-box {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-        }
-
-        .game-img-box img {('https://cdn.discordapp.com/attachments/1489965508735406141/1524793895404441743/8292d7783cec70bd9e0671f9230eb1c0.jpg?ex=6a510a79&is=6a4fb8f9&hm=38b2d2d10b50db3f87c9e3d32c5b2925ce89bc48214122e88a60c0f2a67ce1be&');
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Cột Phải: Khung "game" & Chứa logo các ứng dụng */
-        .game-info-box {
-            background-color: rgba(43, 2, 2, 0.65);
-            border: 1px solid rgba(255, 77, 109, 0.25);
-            border-radius: 24px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-        }
-
-        .game-title {
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: #ffffff;
-            text-transform: lowercase;
-            margin-bottom: 20px;
-        }
-
-        /* Lưới nhỏ xếp icon game */
-        .apps-sub-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); /* Chia 4 cột xếp icon */
-            gap: 12px;
-            width: 100%;
-            padding: 0 5px;
-            box-sizing: border-box;
-        }
-
-        .app-icon {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            border-radius: 8px;
-            object-fit: cover;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-            transition: transform 0.2s;
-        }
-        .app-icon:hover {
-            transform: scale(1.15); /* Hiệu ứng phóng to nhẹ khi di chuột */
-        }
+      <div class="game-grid">
+            <div class="game-img-box">
+                <img src="https://discordapp.com&" alt="Game Background">
+            </div>
+            <div class="game-info-box">
+                <div class="game-title">game</div>
+                <div class="apps-sub-grid">
+                    <!-- Sử dụng kho ảnh Unsplash công khai không lo bị chặn tải ảnh -->
+                    <img class="app-icon" src="https://unsplash.com" title="Free Fire" alt="FF">
+                    <img class="app-icon" src="https://unsplash.com" title="PUBG Mobile" alt="PUBG">
+                    <img class="app-icon" src="https://unsplash.com" title="Valorant" alt="VAL">
+                    <img class="app-icon" src="https://unsplash.com" title="League of Legends" alt="LOL">
+                    <img class="app-icon" src="https://unsplash.com" title="Liên Quân Mobile" alt="LQ">
+                    <img class="app-icon" src="https://unsplash.com" title="Minecraft" alt="MC">
+                    <img class="app-icon" src="https://unsplash.com" title="Roblox" alt="RB">
+                </div>
+            </div>
+        </div>
 
         /* KHU VỰC 4 KHUNG (SERVER CÓ GÌ VUI?) */
         .fun-section {
