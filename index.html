@@ -3,24 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legend Never Dies - Discord Server</title>
+    <title>Sống Dai Thành Huyền Thoại - Discord Server</title>
     <style>
-        /* Thiết lập nền đen chủ đạo theo phong cách Discord */
+        /* Thiết lập nền màu đỏ rượu chủ đạo */
         body {
-            background-color: #1a1c1e; /* Nền đen xám tối sâu */
-            color: #dbdee1; /* Màu chữ trắng xám dịu mắt */
+            background-color: #4a0404; /* Màu đỏ rượu (Burgundy) sang trọng */
+            color: #f5e6e6; /* Màu chữ trắng hồng nhạt hài hòa với nền */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
         }
 
-        /* Khung chứa Banner tự design */
+        /* Khung chứa nội dung chính */
+        .main-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Tiêu đề chính đặt trên cùng và căn giữa */
+        h1 {
+            color: #ffb3b3; /* Màu hồng nhạt nổi bật trên nền đỏ rượu */
+            font-size: 2.8rem;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Tạo đổ bóng cho chữ */
+        }
+
+        /* Khung chứa Banner tự design nằm bên dưới tiêu đề */
         .banner-container {
             width: 100%;
-            max-height: 400px; /* Chiều cao tối đa của banner */
+            max-height: 500px; /* Tăng chiều cao tối đa phù hợp với ảnh của bạn */
             overflow: hidden;
-            background-color: #2b2d31; /* Nền tạm khi chưa có ảnh */
+            border-radius: 12px; /* Bo góc ảnh cho đẹp mắt */
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6); /* Đổ bóng cho khung ảnh */
+            margin-bottom: 40px;
+            background-color: #2a0202;
         }
 
         .banner-container img {
@@ -30,108 +50,84 @@
             object-fit: cover;
         }
 
-        /* Khung nội dung chính ở bên dưới */
-        .main-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* Tên Server và Tiêu đề chính */
-        h1 {
-            color: #5865F2; /* Màu xanh đặc trưng của Discord */
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        /* Các mục giới thiệu */
+        /* Cấu trúc các ô nội dung bên dưới */
         .section {
-            background-color: #2b2d31; /* Khung nền tối hơn cho từng mục */
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 25px;
-            border: 1px solid #3f4248;
+            background-color: #5c0606; /* Khung nền đỏ sáng hơn một chút để nổi bật */
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid #780a0a;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
-        h2 {
+        /* Tiêu đề About us căn giữa */
+        .about-head {
+            text-align: center;
             color: #ffffff;
             margin-top: 0;
-            border-bottom: 2px solid #5865F2;
-            padding-bottom: 8px;
-            display: inline-block;
+            font-size: 2rem;
+            border-bottom: 2px solid #ffb3b3;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
 
-        /* Định dạng danh sách tính năng */
-        ul {
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
+        /* Định dạng đoạn văn văn bản */
+        .about-body {
+            font-size: 1.2rem;
+            text-align: justify; /* Căn đều hai bên cho chuyên nghiệp */
+            text-indent: 20px; /* Thụt lề đầu dòng */
         }
 
         /* Nút bấm Tham gia Server */
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
         .join-btn {
             display: inline-block;
-            background-color: #248046; /* Màu xanh lá của nút Discord */
+            background-color: #248046; /* Giữ màu xanh lá đặc trưng Discord để người dùng dễ nhận biết */
             color: white;
             text-decoration: none;
-            padding: 15px 30px;
+            padding: 15px 40px;
             font-weight: bold;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            transition: background 0.2s;
-            text-align: center;
+            border-radius: 30px; /* Bo tròn nút bấm */
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(36, 128, 70, 0.4);
         }
 
         .join-btn:hover {
-            background-color: #1a6535; /* Đậm hơn khi di chuột vào */
+            background-color: #1a6535;
+            transform: translateY(-3px); /* Hiệu ứng nổi lên khi di chuột */
+            box-shadow: 0 6px 20px rgba(36, 128, 70, 0.6);
         }
     </style>
 </head>
 <body>
 
-    <!-- PHẦN 1: BANNER TỰ DESIGN -->
-    <div class="banner-container">
-        <!-- Thay link ảnh banner của bạn vào chỗ chữ 'banner.jpg' bên dưới -->
-        <img src="banner.jpg" alt="Discord Server Banner">
-    </div>
-
-    <!-- PHẦN 2: NỘI DUNG GIỚI THIỆU -->
     <div class="main-content">
         
-        <h1>LEGEND NEVER DIES</h1>
-        <p style="font-size: 1.2rem; color: #b5bac1;">Chào mừng bạn đến với cộng đồng của chúng tôi. Nơi hội tụ những game thủ đích thực!</p>
+        <!-- PHẦN 1: TIÊU ĐỀ ĐỔI TÊN VÀ CĂN GIỮA -->
+        <h1>SỐNG DAI THÀNH HUYỀN THOẠI</h1>
+
+        <!-- PHẦN 2: BANNER NẰM PHÍA DƯỚI TIÊU ĐỀ -->
+        <div class="banner-container">
+            <img src="https://cdn.discordapp.com/attachments/1489965508735406141/1524780234493268038/file_000000009fbc71f88bf296828fada81f.png?ex=6a50fdc0&is=6a4fac40&hm=baa648901f0b8cd7adb8e66fc53e3c6e74ec68567b661d824090981a0bcd9a3c&" alt="Sống Dai Thành Huyền Thoại Banner">
+        </div>
         
-        <!-- Nút tham gia nhanh -->
-        <p><a href="LINK_MOI_DISCORD_CUA_BAN" target="_blank" class="join-btn">VÀO SERVER DISCORD</a></p>
-
-        <!-- Mục 1: Giới thiệu chung -->
+        <!-- PHẦN 3: NỘI DUNG GIỚI THIỆU ABOUT US -->
         <div class="section">
-            <h2>Về Chúng Tôi</h2>
-            <p>Server được thành lập nhằm mục đích kết nối mọi người có cùng niềm đam mê game, âm nhạc và giao lưu kết bạn. Chúng tôi luôn chào đón các thành viên mới gia nhập vào đại gia đình này.</p>
+            <div class="about-head">About us</div>
+            <div class="about-body">
+                Đây là một cộng đồng được tạo ra với mong muốn mang đến một không gian vui vẻ, thân thiện và thoải mái, nơi mọi người có thể trò chuyện, chơi game, kết bạn và cùng nhau tạo nên những kỷ niệm đáng nhớ. Dù bạn là người hướng nội hay hướng ngoại, bạn đều luôn được chào đón.
+            </div>
         </div>
 
-        <!-- Mục 2: Các hoạt động / Tính năng nổi bật -->
-        <div class="section">
-            <h2>Tính Năng Nổi Bật</h2>
-            <ul>
-                <li><strong>Hệ thống Voice chất lượng:</strong> Phòng voice riêng tư, âm thanh cực rõ phục vụ leo rank.</li>
-                <li><strong>Bot giải trí đa dạng:</strong> Nghe nhạc 24/7, mini-game, vinh danh thành viên chăm tương tác.</li>
-                <li><strong>Sự kiện hàng tuần:</strong> Các buổi Custom game, giải đấu nội bộ có phần thưởng hấp dẫn.</li>
-                <li><strong>Cộng đồng văn minh:</strong> Ban quản trị hoạt động tích cực, môi trường giao lưu không độc hại.</li>
-            </ul>
-        </div>
-
-        <!-- Mục 3: Luật lệ ngắn gọn -->
-        <div class="section">
-            <h2>Quy Định Chung</h2>
-            <p>Để xây dựng một cộng đồng vững mạnh, vui lòng tuân thủ các quy tắc sau:</p>
-            <ul>
-                <li>Tôn trọng các thành viên khác, không công kích hay xúc phạm cá nhân.</li>
-                <li>Không spam tin nhắn, hình ảnh đồi trụy hoặc link độc hại.</li>
-                <li>Đặt tên hiển thị lịch sự, không giả mạo Ban Quản Trị.</li>
-            </ul>
+        <!-- NÚT BẤM THAM GIA DISCORD -->
+        <div class="btn-container">
+            <!-- Bạn hãy nhớ thay chữ LINK_MOI_DISCORD_CỦA_BẠN ở dưới bằng link thật nhé -->
+            <a href="LINK_MOI_DISCORD_CUA_BAN" target="_blank" class="join-btn">THAM GIA SERVER NGAY</a>
         </div>
 
     </div>
